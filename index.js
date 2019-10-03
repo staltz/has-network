@@ -5,38 +5,28 @@
 //where they _ONLY_ have a tun interface, so this test will fail.
 //lets cross that bridge when we come to it though.
 
-var os = require('os')
-module.exports = function () {
-  var interfaces
+var os = require('os');
+module.exports = function() {
+  var interfaces;
 
   try {
-      interfaces = os.networkInterfaces()
+    interfaces = os.networkInterfaces();
   } catch (e) {
-      // As of October 2016, Windows Subsystem for Linux (WSL) does not support
-      // the os.networkInterfaces() call and throws instead. For this platform,
-      // assume we are online.
-      if (e.syscall === 'uv_interface_addresses') {
-          return true
-      } else {
-          throw e
-      }
+    // As of October 2016, Windows Subsystem for Linux (WSL) does not support
+    // the os.networkInterfaces() call and throws instead. For this platform,
+    // assume we are online.
+    if (e.syscall === 'uv_interface_addresses') {
+      return true;
+    } else {
+      throw e;
+    }
   }
 
-  for(var k in interfaces)
-    if(
-      'lo' !== k //loopback
-      &&
+  for (var k in interfaces)
+    if (
+      'lo' !== k && //loopback
       !/^tun\d+$/.test(k) //cjdns
     )
-      return true
-  return false
-}
-
-
-if(!module.parent && process.title === 'node')  {
-  var v = module.exports()
-  console.error(v)
-  //exit non-zero if not online
-  process.exit(1 - v&1)
-}
-
+      return true;
+  return false;
+};

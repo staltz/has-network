@@ -1,11 +1,11 @@
 {
-  "name": "has-network",
+  "name": "has-network2",
   "description": "",
   "version": "0.0.1",
-  "homepage": "https://github.com/dominictarr/has-network",
+  "homepage": "https://github.com/staltz/has-network2",
   "repository": {
     "type": "git",
-    "url": "git://github.com/dominictarr/has-network.git"
+    "url": "git://github.com/staltz/has-network2.git"
   },
   "dependencies": {},
   "devDependencies": {},
