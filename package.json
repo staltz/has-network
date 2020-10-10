@@ -1,7 +1,7 @@
 {
   "name": "has-network2",
-  "description": "",
-  "version": "0.0.2",
+  "description": "Checks if we have a usable network interface",
+  "version": "0.0.3",
   "homepage": "https://github.com/staltz/has-network2",
   "repository": {
     "type": "git",
