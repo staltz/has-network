@@ -10,7 +10,7 @@ module.exports = function() {
   var interfaces;
 
   // in browser always assume we are connected
-  if (typeof localStorage !== "undefined" || localStorage !== null)
+  if (typeof localStorage !== "undefined" && localStorage !== null)
     return true;
 
   try {
